@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 500px;
+    margin: 5px auto;
+}
+.row{
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.table{
+    width: 100%;
+}
+.table, .table tr, .table td, .table th{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.table>thead{
+    background-color: #333;
+    color: #fff;
+}
+.table>thead>tr>th{
+    padding:5px 0px;
+}
+.table>tbody>tr>td{
+    padding:5px 0px;
+}
+
+.table>tbody>tr>td:first-child{
+    text-align: center;
+}
+.table>tbody>tr>td:last-child{
+    text-align: center;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding: 3px 7px;
+    border: 1px solid rgb(218, 89, 42);
+    border-radius: 3px;
+    background-image: linear-gradient(to right bottom, rgb(221, 113, 73, 0.7), rgb(223, 145, 117, .4));
+    color: #fff;
+    cursor: pointer;
+    box-shadow: rgb(221, 113, 73, 0.9) 1px 1px;
+}
+.btn:hover{
+    background-image: linear-gradient(to right bottom, rgb(221, 113, 73, 0.9), rgb(223, 145, 117, .7));
+}
+
+.form-control{
+    padding: 5px;
+    width: 300px;
+}
+
+.edit-product{
+    width: 100%;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+.d-none{
+    display: none;
+}
+
+#modifyProduct{
+    position: relative;
+}
+#modifyProduct>span{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: red;
+    cursor: pointer;
+    font-size: larger;
+}
