@@ -21,7 +21,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Product Name</th>
+                        <th>Product Name
+                            <span style="color: white; cursor: pointer;" title="Ascending">&#x25B2;</span>
+                            <span style="color: white; cursor: pointer;" title="Descending">&#x25BC;</span>
+                        </th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -34,7 +37,7 @@
             <div id="modifyProduct" class="edit-product d-none">
                 <label for="new_ProductName">Product name</label>
                 <input type="text" class="form-control" id="new_ProductName" name="new_ProductName">
-                <button id="btnUpdate" class="btn" >Update</button>
+                <button id="btnUpdate" class="btn">Update</button>
                 <button class="btn" onclick="clearForm()">Cancel</button>
                 <span onclick="clearForm()">&times;</span>
             </div>
