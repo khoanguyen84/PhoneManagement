@@ -16,14 +16,18 @@
             <input type="text" class="form-control" id="productName" name="productName" onkeydown="pressEnter(event)">
             <button class="btn" onclick="createProduct()">Create</button>
         </div>
+        <div class="row" style="display: flex;">
+            <label for="keyword" style="width: 60px;">Search</label>
+            <input type="search" style="flex-grow: 1;" id="keyword" class="form-control" oninput="search(event)">
+        </div>
         <div class="row">
             <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Product Name
-                            <span style="color: white; cursor: pointer;" title="Ascending">&#x25B2;</span>
-                            <span style="color: white; cursor: pointer;" title="Descending">&#x25BC;</span>
+                            <span style="color: white; cursor: pointer;" title="Ascending" onclick="sort('asc')">&#x25B2;</span>
+                            <span style="color: white; cursor: pointer;" title="Descending" onclick="sort('desc')">&#x25BC;</span>
                         </th>
                         <th>Actions</th>
                     </tr>

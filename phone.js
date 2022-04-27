@@ -1,16 +1,16 @@
 var products = [
     "Iphone 6s",
     "Iphone 7 plus",
-    "Iphone X",
+    "Iphone X -1",
     "Iphone 8"
 ]
 
 const key_enter = 13;
 // var position = 0;
 
-function renderProduct() {
+function renderProduct(data) {
     let tbProducts = document.querySelector('.table>tbody');
-    let htmls = products.map(function (product, index) {
+    let htmls = data.map(function (product, index) {
         return `
                 <tr>
                     <td>${index + 1}</td>
@@ -36,7 +36,7 @@ function createProduct() {
     if (productName != null && productName.trim() != "") {
         products.push(productName);
         reset();
-        renderProduct();
+        renderProduct(products);
     }
     else {
         alert("Product name is required!")
@@ -58,7 +58,7 @@ function removeProduct(index) {
     let confirmed = window.confirm(`Are sure to want to remove ${products[index]}?`);
     if (confirmed) {
         products.splice(index, 1);
-        renderProduct();
+        renderProduct(products);
     }
 }
 
@@ -70,7 +70,7 @@ function modify(index) {
         let new_ProductName = document.querySelector("#new_ProductName").value;
         if (new_ProductName != null && new_ProductName.trim() != "") {
             products[index] = new_ProductName;
-            renderProduct();
+            renderProduct(products);
             clearForm();
         }
         else {
@@ -85,6 +85,24 @@ function clearForm() {
     position = 0;
 }
 
+function sort(direction){
+    // if(direction == 'asc'){
+    //     products.sort();
+    // }
+    // else{
+    //     products.reverse();
+    // }
+    direction == 'asc' ? products.sort() : products.reverse();
+    renderProduct(products);
+}
+
+function search(event){
+    let keywork = event.target.value;
+    let result =  products.filter(function(product, index){
+        return product.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
+    })
+    renderProduct(result);
+}
 
 function init() {
     // document.querySelector("#productName").onkeydown = function(e){
@@ -92,7 +110,7 @@ function init() {
     //         createProduct();
     //     }
     // }
-    renderProduct();
+    renderProduct(products);
 }
 
 init();
