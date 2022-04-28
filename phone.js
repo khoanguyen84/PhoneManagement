@@ -58,7 +58,8 @@ function removeProduct(index) {
     let confirmed = window.confirm(`Are sure to want to remove ${products[index]}?`);
     if (confirmed) {
         products.splice(index, 1);
-        renderProduct(products);
+        // renderProduct(products);
+        search()
     }
 }
 
@@ -96,8 +97,10 @@ function sort(direction){
     renderProduct(products);
 }
 
-function search(event){
-    let keywork = event.target.value;
+function search(){
+    // console.log(event)
+    // let keywork = event.target.value;
+    let keywork = document.querySelector('#keyword').value;
     let result =  products.filter(function(product, index){
         return product.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
     })
